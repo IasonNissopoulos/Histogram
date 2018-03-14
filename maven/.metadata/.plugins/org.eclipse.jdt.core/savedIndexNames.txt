@@ -1,2 +1,0 @@
-INDEX VERSION 1.129+D:\College\6st Semester\Software Engineering in Practice\lab\HistogramAssignment\maven\.metadata\.plugins\org.eclipse.jdt.core
-3716777220.index
