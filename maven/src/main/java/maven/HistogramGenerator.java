@@ -12,20 +12,21 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class HistogramGenerator {
 	public static void main(String[] args) {
 		HistogramGenerator demo = new HistogramGenerator();
-		// the input values
+		//create a 2-d array
 		int[][] disp = new int[11][2];
 		String path = args[0];
 		System.out.println(path);
 		disp = demo.returnArray(path);
+		//create a 1-d array
 		int[] dataValues = new int[11];
 		int i = 0;
+		//implement the sums from the 2-d array into the 1-d array
 		while(i <11){
 			// the input values
 			dataValues[i] = disp[i][1];
 			i++;
 		}
-		// the input values
-
+		// generate the Chart
 		demo.generateChart(dataValues);
 	}
 		
@@ -80,22 +81,24 @@ public class HistogramGenerator {
 
 		
 	public int[][] returnArray(String gradePath) {
-		// args[0] + grades.txt
+		// create the 2-d array
 		int[][] frequencyArray = new int[11][2];
 		String thisLine = null;
 		try {
+			//read the file in the gradePath destination
 			BufferedReader br = new BufferedReader(new FileReader(gradePath));//gradePath
 			int line;
 
 			int i = 0;
+			//initialiazie the array
 			while (i < 11) {
 				frequencyArray[i][0] = i;
 				i++;
 			}
-
+			//read each Line 
 			while ((thisLine = br.readLine()) != null) {
 				line = Integer.parseInt(thisLine);
-				//System.out.println("thisLine" + thisLine);
+				//append the grades into the array
 				if (line == 0) {
 					//System.out.println("Got into 0" + line);
 					frequencyArray[0][1]++;
